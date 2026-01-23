@@ -1,0 +1,48 @@
+<div class="home">
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1 class="hero-title">
+      Hi, I'm <span class="highlight">Farigab</span>
+    </h1>
+    <p class="hero-subtitle">
+      Software Developer | Problem Solver | Tech Enthusiast
+    </p>
+    <p class="hero-description">
+      Building scalable web applications with modern technologies.
+      Passionate about clean code, user experience, and continuous learning.
+    </p>
+    <div class="hero-actions">
+      <p-button label="View Projects" [routerLink]="['/projects']" severity="primary"></p-button>
+      <p-button label="Get in Touch" [routerLink]="['/contact']" severity="secondary" [outlined]="true"></p-button>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="tech-stack">
+    <h2 class="section-title">Tech Stack</h2>
+    <p class="section-subtitle">Technologies I work with</p>
+
+    <div class="tech-grid">
+      @for (tech of technologies(); track tech.name) {
+      <div class="tech-card" [style.border-color]="tech.color">
+        <img [ngSrc]="tech.img" width="40" height="40" alt="{{ tech.name }} logo" />
+        <h3 class="tech-name" [style.color]="tech.color">{{ tech.name }}</h3>
+        <span class="tech-category">{{ tech.category }}</span>
+      </div>
+      }
+    </div>
+  </section>
+
+  <!-- Highlights Section -->
+  <section class="highlights">
+    @for (highlight of highlights(); track highlight.title) {
+    <p-card class="highlight-card">
+      <div class="card-content">
+        <h3 class="card-title">{{ highlight.title }}</h3>
+        <p class="card-description">{{ highlight.description }}</p>
+      </div>
+    </p-card>
+    }
+  </section>
+
+</div>
