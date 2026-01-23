@@ -1,0 +1,49 @@
+.about-page {
+  padding: 32px;
+  color: var(--text-primary, #E0DAFF);
+
+  .about-header {
+    margin-bottom: 24px;
+
+    .about-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0 0 6px 0;
+      color: var(--text-primary, #E0DAFF);
+    }
+
+    .about-subtitle {
+      margin: 0;
+      color: var(--text-secondary, #BFB3F2);
+      font-size: 16px;
+    }
+  }
+
+  .about-card {
+    background: var(--surface, #2A273D);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(107, 93, 211, 0.08);
+    border: 1px solid var(--border, #443F5E);
+
+    .card-content {
+      p.lead {
+        font-size: 16px;
+        line-height: 1.5;
+        color: var(--text-primary, #E0DAFF);
+        margin-bottom: 12px;
+      }
+
+      p {
+        color: var(--text-secondary, #BFB3F2);
+        margin: 8px 0;
+      }
+    }
+
+    .about-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+  }
+}

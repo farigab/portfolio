@@ -18,5 +18,16 @@
         test coverage, reducing technical debt, and delivering flexible, well-designed solutions using <strong>Java 21,
           Angular 18, AWS, Docker</strong>, and <strong>CI/CD pipelines</strong>.</p>
     </div>
+
+    <ng-template pTemplate="footer">
+      <div class="about-actions" role="group" aria-label="Social links">
+        <a [href]="githubUrl()" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+          <p-button label="GitHub" icon="pi pi-github"></p-button>
+        </a>
+        <a [href]="linkedinUrl()" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+          <p-button label="LinkedIn" icon="pi pi-linkedin"></p-button>
+        </a>
+      </div>
+    </ng-template>
   </p-card>
 </div>
