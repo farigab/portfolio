@@ -1,1 +1,45 @@
-<p>projects works!</p>
+<div class="projects-page">
+  <header class="projects-header">
+    <h1 class="projects-title">Projects</h1>
+    <p class="projects-subtitle">Explore my active projects and applications</p>
+  </header>
+
+  @if (projects().length > 0) {
+  <div class="projects-grid">
+    @for (project of projects(); track project.id) {
+    <p-card class="project-card">
+      <ng-template pTemplate="header">
+        <div class="project-card-header">
+          <h2 class="project-name">{{ project.name }}</h2>
+          <p-tag [value]="getStatusLabel(project.status)" [severity]="getStatusSeverity(project.status)"
+            [attr.aria-label]="'Project status: ' + getStatusLabel(project.status)">
+          </p-tag>
+        </div>
+      </ng-template>
+
+      <p class="project-description">{{ project.description }}</p>
+
+      @if (project.tags.length > 0) {
+      <div class="project-tags">
+        @for (tag of project.tags; track tag) {
+        <span class="project-tag">{{ tag }}</span>
+        }
+      </div>
+      }
+
+      <ng-template pTemplate="footer">
+        <p-button label="Visit Project" icon="pi pi-external-link" (onClick)="openProject(project.url)"
+          [attr.aria-label]="'Visit ' + project.name + ' project'">
+        </p-button>
+      </ng-template>
+    </p-card>
+    }
+  </div>
+  } @else {
+  <div class="empty-state" role="status" aria-live="polite">
+    <i class="pi pi-folder-open empty-icon" aria-hidden="true"></i>
+    <h2 class="empty-title">No Projects Yet</h2>
+    <p class="empty-description">Projects will appear here once they are added.</p>
+  </div>
+  }
+</div>
