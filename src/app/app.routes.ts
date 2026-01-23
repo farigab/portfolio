@@ -15,16 +15,16 @@ export const routes: Routes = [
     loadComponent: () => import('./features/projects/projects')
       .then(m => m.ProjectsComponent)
   },
-  {
-    path: 'experience',         // URL: farigab.com/experience
-    loadComponent: () => import('./features/experience/experience')
-      .then(m => m.ExperienceComponent)
-  },
-  {
-    path: 'contact',            // URL: farigab.com/contact
-    loadComponent: () => import('./features/contact/contact')
-      .then(m => m.ContactComponent)
-  },
+  // {
+  //   path: 'experience',         // URL: farigab.com/experience
+  //   loadComponent: () => import('./features/experience/experience')
+  //     .then(m => m.ExperienceComponent)
+  // },
+  // {
+  //   path: 'contact',            // URL: farigab.com/contact
+  //   loadComponent: () => import('./features/contact/contact')
+  //     .then(m => m.ContactComponent)
+  // },
   {
     path: '**',                 // Qualquer outra URL (404)
     redirectTo: ''              // Redireciona para a home
