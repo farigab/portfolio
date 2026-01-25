@@ -25,11 +25,11 @@ export class ProjectsComponent {
   projects = signal<Project[]>([
     {
       id: '1',
-      name: 'BragDoc',
+      name: 'BragDev',
       url: 'https://bragdoc.farigab.com',
-      description: 'A professional achievement tracker to help you document your career wins and maintain a living record of your accomplishments.',
+      description: 'An automation tool that uses AI to turn commits and pull requests into clear, structured technical progress reports.',
       status: 'active',
-      tags: ['Angular', 'PrimeNG', 'TypeScript', 'Java', 'Spring', 'PostgreSQL']
+      tags: ['Java', 'Spring', 'PostgreSQL', 'Angular', 'TypeScript', 'PrimeNG']
     }
   ]);
 
