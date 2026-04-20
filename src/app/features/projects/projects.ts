@@ -5,7 +5,7 @@ import { CardModule } from 'primeng/card';
 import { TagModule } from 'primeng/tag';
 
 interface Project {
-  id: string;
+  id: number;
   name: string;
   url: string;
   description: string;
@@ -18,18 +18,26 @@ interface Project {
   standalone: true,
   imports: [CommonModule, CardModule, ButtonModule, TagModule],
   templateUrl: './projects.html',
-  styleUrl: './projects.scss',
+  styleUrls: ['./projects.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectsComponent {
   projects = signal<Project[]>([
     {
-      id: '1',
+      id: 1,
       name: 'BragDev',
       url: 'https://bragdoc.farigab.com',
       description: 'An automation tool that uses AI to turn commits and pull requests into clear, structured technical progress reports.',
       status: 'active',
       tags: ['Java', 'Spring', 'PostgreSQL', 'Angular', 'TypeScript', 'PrimeNG']
+    },
+    {
+      id: 2,
+      name: 'RepoFlow — Git Tools & Graph',
+      url: 'https://marketplace.visualstudio.com/items?itemName=farigab.repoflow',
+      description: 'A Visual Studio Code extension that provides a visual graph of your Git repository, making it easier to understand branch structures and commit history.',
+      status: 'active',
+      tags: ['TypeScript', 'VS Code Extension API', 'Graph Visualization', 'Git Tools']
     }
   ]);
 
