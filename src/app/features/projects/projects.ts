@@ -29,7 +29,7 @@ export class ProjectsComponent {
       url: 'https://bragdoc.farigab.com',
       description: 'An automation tool that uses AI to turn commits and pull requests into clear, structured technical progress reports.',
       status: 'active',
-      tags: ['Java', 'Spring', 'PostgreSQL', 'Angular', 'TypeScript', 'PrimeNG']
+      tags: ['Go','PostgreSQL', 'Angular', 'TypeScript', 'PrimeNG']
     },
     {
       id: 2,
