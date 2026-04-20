@@ -37,7 +37,7 @@ export class ProjectsComponent {
       url: 'https://marketplace.visualstudio.com/items?itemName=farigab.repoflow',
       description: 'A Visual Studio Code extension that provides a visual graph of your Git repository, making it easier to understand branch structures and commit history.',
       status: 'active',
-      tags: ['TypeScript', 'VS Code Extension API', 'Graph Visualization', 'Git Tools']
+      tags: ['TypeScript', 'VS Code Extension', 'Graph Visualization', 'Git Tools']
     }
   ]);
 
