@@ -7,24 +7,39 @@
     <nav class="nav" [class.nav-mobile-open]="mobileMenuOpen()">
       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link"
         (click)="closeMobileMenu()">
-        Home
+        {{ i18n.copy().nav.home }}
       </a>
       <a routerLink="/about" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">
-        About
+        {{ i18n.copy().nav.about }}
       </a>
       <a routerLink="/projects" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">
-        Projects
+        {{ i18n.copy().nav.projects }}
       </a>
-      <!-- <a routerLink="/experience" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">
-        Experience
+      <a routerLink="/experience" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">
+        {{ i18n.copy().nav.experience }}
       </a>
+      <!--
       <a routerLink="/contact" routerLinkActive="active" class="nav-link" (click)="closeMobileMenu()">
         Contact
-      </a> -->
+      </a>
+      -->
     </nav>
 
+    <div class="language-switcher" role="group" aria-label="Language selector">
+      <button type="button" class="language-option" [class.active]="i18n.currentLanguage() === 'pt-BR'"
+        [attr.aria-label]="i18n.copy().language.portuguese" [attr.aria-pressed]="i18n.currentLanguage() === 'pt-BR'"
+        (click)="setLanguage('pt-BR')">
+        <img src="flags/br.svg" width="22" height="16" alt="" aria-hidden="true" />
+      </button>
+      <button type="button" class="language-option" [class.active]="i18n.currentLanguage() === 'en'"
+        [attr.aria-label]="i18n.copy().language.english" [attr.aria-pressed]="i18n.currentLanguage() === 'en'"
+        (click)="setLanguage('en')">
+        <img src="flags/gb.svg" width="22" height="16" alt="" aria-hidden="true" />
+      </button>
+    </div>
+
     <button class="mobile-menu-btn" (click)="toggleMobileMenu()"
-      [attr.aria-label]="mobileMenuOpen() ? 'Fechar menu' : 'Abrir menu'" [attr.aria-expanded]="mobileMenuOpen()">
+      [attr.aria-label]="mobileMenuOpen() ? 'Close menu' : 'Open menu'" [attr.aria-expanded]="mobileMenuOpen()">
       <span class="hamburger" [class.open]="mobileMenuOpen()">
         <span class="line"></span>
         <span class="line"></span>

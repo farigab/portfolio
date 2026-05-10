@@ -1,7 +1,7 @@
 <div class="projects-page">
   <header class="projects-header">
-    <h1 class="projects-title">Projects</h1>
-    <p class="projects-subtitle">Explore my active projects and applications</p>
+    <h1 class="projects-title">{{ i18n.copy().projects.title }}</h1>
+    <p class="projects-subtitle">{{ i18n.copy().projects.subtitle }}</p>
   </header>
 
   @if (projects().length > 0) {
@@ -10,7 +10,10 @@
     <p-card class="project-card">
       <ng-template pTemplate="header">
         <div class="project-card-header">
-          <h2 class="project-name">{{ project.name }}</h2>
+          <div>
+            <h2 class="project-name">{{ project.name }}</h2>
+            <p class="project-type">{{ project.type }}</p>
+          </div>
           <p-tag [value]="getStatusLabel(project.status)" [severity]="getStatusSeverity(project.status)"
             [attr.aria-label]="'Project status: ' + getStatusLabel(project.status)">
           </p-tag>
@@ -27,10 +30,12 @@
       </div>
       }
 
-      <div class="project-action">
-        <p-button label="Open App" icon="pi pi-external-link" (onClick)="openProject(project.url)"
-          [attr.aria-label]="'Visit ' + project.name + ' project'">
+      <div class="project-actions">
+        @for (link of project.links; track link.url) {
+        <p-button [label]="link.label" [icon]="link.icon" [outlined]="!link.primary" (onClick)="openProject(link.url)"
+          [attr.aria-label]="i18n.copy().labels.open + ' ' + project.name + ' - ' + link.label">
         </p-button>
+        }
       </div>
     </p-card>
     }
@@ -38,8 +43,8 @@
   } @else {
   <div class="empty-state" role="status" aria-live="polite">
     <i class="pi pi-folder-open empty-icon" aria-hidden="true"></i>
-    <h2 class="empty-title">No Projects Yet</h2>
-    <p class="empty-description">Projects will appear here once they are added.</p>
+    <h2 class="empty-title">{{ i18n.copy().projects.emptyTitle }}</h2>
+    <p class="empty-description">{{ i18n.copy().projects.emptyDescription }}</p>
   </div>
   }
 </div>

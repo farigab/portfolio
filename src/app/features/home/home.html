@@ -1,26 +1,30 @@
 <div class="home">
-  <!-- Hero Section -->
   <section class="hero">
     <h1 class="hero-title">
-      Hi, I'm <span class="highlight">Gabriel</span>
+      {{ i18n.copy().home.titlePrefix }} <span class="highlight">{{ i18n.copy().home.name }}</span>
     </h1>
     <p class="hero-subtitle">
-      Software Developer | Problem Solver | Tech Enthusiast
+      {{ i18n.copy().home.subtitle }}
     </p>
     <p class="hero-description">
-      Building scalable web applications with modern technologies.
-      Passionate about clean code, user experience, and continuous learning.
+      {{ i18n.copy().home.description }}
     </p>
     <div class="hero-actions">
-      <p-button label="View Projects" [routerLink]="['/projects']" severity="primary"></p-button>
-      <!-- <p-button label="Get in Touch" [routerLink]="['/contact']" severity="secondary" [outlined]="true"></p-button> -->
+      <p-button [label]="i18n.copy().home.primaryCta" [routerLink]="['/projects']" severity="primary"></p-button>
+      <a [href]="githubUrl" target="_blank" rel="noopener noreferrer">
+        <p-button [label]="i18n.copy().home.githubCta" icon="pi pi-github" severity="secondary"
+          [outlined]="true"></p-button>
+      </a>
+      <a [href]="linkedinUrl" target="_blank" rel="noopener noreferrer">
+        <p-button [label]="i18n.copy().home.linkedinCta" icon="pi pi-linkedin" severity="secondary"
+          [outlined]="true"></p-button>
+      </a>
     </div>
   </section>
 
-  <!-- Tech Stack Section -->
   <section class="tech-stack">
-    <h2 class="section-title">Tech Stack</h2>
-    <p class="section-subtitle">Technologies I work with</p>
+    <h2 class="section-title">{{ i18n.copy().home.stackTitle }}</h2>
+    <p class="section-subtitle">{{ i18n.copy().home.stackSubtitle }}</p>
 
     <div class="tech-grid">
       @for (tech of technologies(); track tech.name) {
@@ -35,7 +39,6 @@
     </div>
   </section>
 
-  <!-- Highlights Section -->
   <section class="highlights">
     @for (highlight of highlights(); track highlight.title) {
     <p-card class="highlight-card">

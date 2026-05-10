@@ -81,6 +81,10 @@
   gap: var(--spacing-sm);
   justify-content: center;
   flex-wrap: wrap;
+
+  a {
+    display: inline-flex;
+  }
 }
 
 // ============================================

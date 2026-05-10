@@ -1,17 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { TagModule } from 'primeng/tag';
-
-interface Project {
-  id: number;
-  name: string;
-  url: string;
-  description: string;
-  status: 'active' | 'maintenance' | 'archived';
-  tags: string[];
-}
+import { I18nService, PortfolioProject } from '../../core/services/i18n.service';
 
 @Component({
   selector: 'app-projects',
@@ -22,35 +14,11 @@ interface Project {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectsComponent {
-  projects = signal<Project[]>([
-    {
-      id: 1,
-      name: 'BragDev',
-      url: 'https://bragdoc.farigab.com',
-      description: 'An automation tool that uses AI to turn commits and pull requests into clear, structured technical progress reports.',
-      status: 'active',
-      tags: ['Go', 'PostgreSQL', 'Angular', 'TypeScript', 'PrimeNG']
-    },
-    {
-      id: 2,
-      name: 'RepoFlow - Git Tools & Graph',
-      url: 'https://marketplace.visualstudio.com/items?itemName=farigab.repoflow',
-      description: 'A Visual Studio Code extension that provides a visual graph of your Git repository, making it easier to understand branch structures and commit history.',
-      status: 'active',
-      tags: ['TypeScript', 'VS Code Extension', 'Graph Visualization', 'Git Tools']
-    },
-    {
-      id: 3,
-      name: 'FinTrack',
-      url: 'https://fintrack.farigab.com/',
-      description: 'A full-stack personal finance app with Google OAuth, income and expense tracking, monthly reports, notifications, PT/EN internationalization, and AI-generated financial analysis.',
-      status: 'active',
-      tags: ['Go', 'SQLite', 'React', 'TypeScript', 'Material UI']
-    }
-  ]);
+  readonly i18n = inject(I18nService);
+  readonly projects = computed(() => this.i18n.copy().projects.items);
 
-  getStatusSeverity(status: Project['status']): 'success' | 'warn' | 'danger' {
-    const severityMap: Record<Project['status'], 'success' | 'warn' | 'danger'> = {
+  getStatusSeverity(status: PortfolioProject['status']): 'success' | 'warn' | 'danger' {
+    const severityMap: Record<PortfolioProject['status'], 'success' | 'warn' | 'danger'> = {
       active: 'success',
       maintenance: 'warn',
       archived: 'danger'
@@ -58,13 +26,8 @@ export class ProjectsComponent {
     return severityMap[status];
   }
 
-  getStatusLabel(status: Project['status']): string {
-    const labelMap: Record<Project['status'], string> = {
-      active: 'Active',
-      maintenance: 'Maintenance',
-      archived: 'Archived'
-    };
-    return labelMap[status];
+  getStatusLabel(status: PortfolioProject['status']): string {
+    return this.i18n.copy().labels[status];
   }
 
   openProject(url: string): void {

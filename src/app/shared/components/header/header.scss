@@ -52,7 +52,7 @@
 
 .nav {
   display: flex;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
   align-items: center;
 
   @media (max-width: 768px) {
@@ -79,6 +79,55 @@
 
   @media (min-width: 769px) and (max-width: 1024px) {
     gap: var(--spacing-md);
+  }
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(28, 27, 41, 0.35);
+  z-index: 1001;
+
+  @media (max-width: 768px) {
+    margin-left: auto;
+  }
+}
+
+.language-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+
+  img {
+    display: block;
+    border-radius: 2px;
+  }
+
+  &:hover {
+    background: rgba(107, 93, 211, 0.1);
+    transform: translateY(-1px);
+  }
+
+  &.active {
+    border-color: var(--primary);
+    background: rgba(107, 93, 211, 0.18);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
   }
 }
 
@@ -249,6 +298,7 @@ body.menu-open {
 
   .nav,
   .nav-link,
+  .language-option,
   .line,
   .overlay {
     transition: none !important;

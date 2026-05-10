@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { CardModule } from 'primeng/card';
+import { I18nService } from '../../core/services/i18n.service';
 
 @Component({
   selector: 'app-experience',
   standalone: true,
-  template: `
-    <div class="page experience">
-      <h2>Experience</h2>
-      <p>Experience timeline will appear here.</p>
-    </div>
-  `,
-  styles: [
-    `:host { display: block; padding: 24px; }`
-  ]
+  imports: [CardModule],
+  templateUrl: './experience.html',
+  styleUrls: ['./experience.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExperienceComponent { }
+export class ExperienceComponent {
+  readonly i18n = inject(I18nService);
+  readonly experiences = computed(() => this.i18n.copy().experience.items);
+}

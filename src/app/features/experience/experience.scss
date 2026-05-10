@@ -1,0 +1,123 @@
+:host {
+  display: block;
+  padding: var(--spacing-lg) 0;
+}
+
+.experience-page {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.experience-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.experience-title {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin: 0 0 var(--spacing-xs);
+}
+
+.experience-subtitle {
+  max-width: 760px;
+  font-size: var(--font-size-body);
+  color: var(--text-secondary);
+  line-height: var(--line-height-base);
+  margin: 0;
+}
+
+.timeline {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+::ng-deep .experience-card {
+  display: block;
+
+  .p-card {
+    background: var(--surface);
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+    box-shadow: 0 4px 12px rgba(107, 93, 211, 0.15) !important;
+  }
+
+  .p-card-body {
+    padding: var(--spacing-lg);
+  }
+
+  .p-card-content {
+    padding: 0;
+  }
+}
+
+.experience-card-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--spacing-md);
+  align-items: start;
+  margin-bottom: var(--spacing-sm);
+}
+
+.experience-role {
+  margin: 0 0 6px;
+  font-size: var(--font-size-section);
+  color: var(--text-primary);
+}
+
+.experience-company {
+  margin: 0;
+  color: var(--primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.experience-meta {
+  display: grid;
+  gap: 4px;
+  justify-items: end;
+  color: var(--text-disabled);
+  font-size: var(--font-size-caption);
+  white-space: nowrap;
+}
+
+.experience-project {
+  margin: 0 0 var(--spacing-sm);
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.experience-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-secondary);
+  line-height: var(--line-height-base);
+}
+
+.experience-list li::marker {
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .experience-title {
+    font-size: 24px;
+  }
+
+  .experience-card-header {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+  }
+
+  .experience-meta {
+    justify-items: start;
+    white-space: normal;
+  }
+
+  ::ng-deep .experience-card {
+    .p-card-body {
+      padding: var(--spacing-md);
+    }
+  }
+}

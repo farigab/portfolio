@@ -1,1 +1,33 @@
-<p>experience works!</p>
+<div class="experience-page">
+  <header class="experience-header">
+    <h1 class="experience-title">{{ i18n.copy().experience.title }}</h1>
+    <p class="experience-subtitle">{{ i18n.copy().experience.subtitle }}</p>
+  </header>
+
+  <div class="timeline">
+    @for (item of experiences(); track item.id) {
+    <p-card class="experience-card">
+      <div class="experience-card-header">
+        <div>
+          <h2 class="experience-role">{{ item.role }}</h2>
+          <p class="experience-company">{{ item.company }}</p>
+        </div>
+        <div class="experience-meta">
+          <span>{{ item.period }}</span>
+          <span>{{ item.location }}</span>
+        </div>
+      </div>
+
+      @if (item.project) {
+      <p class="experience-project">{{ item.project }}</p>
+      }
+
+      <ul class="experience-list">
+        @for (bullet of item.bullets; track bullet) {
+        <li>{{ bullet }}</li>
+        }
+      </ul>
+    </p-card>
+    }
+  </div>
+</div>
