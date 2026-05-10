@@ -29,7 +29,7 @@ export class ProjectsComponent {
       url: 'https://bragdoc.farigab.com',
       description: 'An automation tool that uses AI to turn commits and pull requests into clear, structured technical progress reports.',
       status: 'active',
-      tags: ['Go','PostgreSQL', 'Angular', 'TypeScript', 'PrimeNG']
+      tags: ['Go', 'PostgreSQL', 'Angular', 'TypeScript', 'PrimeNG']
     },
     {
       id: 2,
@@ -38,6 +38,14 @@ export class ProjectsComponent {
       description: 'A Visual Studio Code extension that provides a visual graph of your Git repository, making it easier to understand branch structures and commit history.',
       status: 'active',
       tags: ['TypeScript', 'VS Code Extension', 'Graph Visualization', 'Git Tools']
+    },
+    {
+      id: 3,
+      name: 'FinTrack',
+      url: 'https://fintrack.farigab.com/',
+      description: 'Built a full-stack personal finance management app with Google OAuth authentication, income and expense tracking, benefits, categories, recurring transactions, monthly reports, notifications, and PT/EN internationalization. The system includes a responsive dashboard, locale-based currency formatting, flag-based language switching, and AI-generated financial analysis.',
+      status: 'active',
+      tags: ['Go', 'SQLite', 'React', 'TypeScript', 'Material UI']
     }
   ]);
 
