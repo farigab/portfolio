@@ -33,7 +33,7 @@ export class ProjectsComponent {
     },
     {
       id: 2,
-      name: 'RepoFlow — Git Tools & Graph',
+      name: 'RepoFlow - Git Tools & Graph',
       url: 'https://marketplace.visualstudio.com/items?itemName=farigab.repoflow',
       description: 'A Visual Studio Code extension that provides a visual graph of your Git repository, making it easier to understand branch structures and commit history.',
       status: 'active',
@@ -43,7 +43,7 @@ export class ProjectsComponent {
       id: 3,
       name: 'FinTrack',
       url: 'https://fintrack.farigab.com/',
-      description: 'Built a full-stack personal finance management app with Google OAuth authentication, income and expense tracking, benefits, categories, recurring transactions, monthly reports, notifications, and PT/EN internationalization. The system includes a responsive dashboard, locale-based currency formatting, flag-based language switching, and AI-generated financial analysis.',
+      description: 'A full-stack personal finance app with Google OAuth, income and expense tracking, monthly reports, notifications, PT/EN internationalization, and AI-generated financial analysis.',
       status: 'active',
       tags: ['Go', 'SQLite', 'React', 'TypeScript', 'Material UI']
     }

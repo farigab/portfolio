@@ -1,5 +1,88 @@
+.about-page {
+  padding: var(--spacing-lg) 0;
+}
+
+.about-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.about-title {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin: 0 0 var(--spacing-xs);
+}
+
+.about-subtitle {
+  font-size: var(--font-size-body);
+  color: var(--text-secondary);
+  line-height: var(--line-height-base);
+  margin: 0;
+}
+
+::ng-deep .about-card {
+  .p-card {
+    max-width: 860px;
+    background: var(--surface);
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+    box-shadow: 0 4px 12px rgba(107, 93, 211, 0.15) !important;
+    overflow: hidden;
+  }
+
+  .p-card-body {
+    padding: var(--spacing-lg);
+  }
+
+  .p-card-content {
+    padding: 0;
+  }
+
+  .p-card-footer {
+    padding-top: var(--spacing-xs);
+  }
+}
+
+.card-content {
+  display: grid;
+  gap: var(--spacing-sm);
+}
+
+.card-content p {
+  margin: 0;
+}
+
+.about-lead {
+  color: var(--text-primary);
+  font-size: 18px;
+}
+
 .about-actions {
   display: flex;
   gap: 12px;
   margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+::ng-deep .about-actions {
+  .p-button {
+    border-radius: var(--radius-sm);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .about-title {
+    font-size: 24px;
+  }
+
+  ::ng-deep .about-card {
+    .p-card-body {
+      padding: var(--spacing-md);
+    }
+  }
 }
