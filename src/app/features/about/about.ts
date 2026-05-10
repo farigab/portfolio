@@ -12,5 +12,5 @@ import { CardModule } from 'primeng/card';
 })
 export class AboutComponent {
   githubUrl = signal('https://github.com/farigab');
-  linkedinUrl = signal('https://www.linkedin.com/in/gabriel-b-f/?locale=en_US');
+  linkedinUrl = signal('https://www.linkedin.com/in/gabriel-b-f/?locale=en-US');
 }
