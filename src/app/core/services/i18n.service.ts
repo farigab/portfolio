@@ -356,7 +356,8 @@ const copy: Record<LanguageCode, PortfolioCopy> = {
             'Aplicação full-stack de finanças pessoais com Google OAuth, controle de receitas e despesas, relatórios mensais, notificações, internacionalização e análise financeira gerada por IA.',
           tags: ['React', 'TypeScript', 'Go', 'Google OAuth', 'SQLite', 'IA'],
           links: [
-            { label: 'Frontend', url: 'https://github.com/farigab/fintrack-web', icon: 'pi pi-github', primary: true },
+            { label: 'Live', url: 'https://fintrack.farigab.com/', icon: 'pi pi-external-link', primary: true },
+            { label: 'Frontend', url: 'https://github.com/farigab/fintrack-web', icon: 'pi pi-github'},
             { label: 'API', url: 'https://github.com/farigab/fintrack-api', icon: 'pi pi-github' }
           ]
         }

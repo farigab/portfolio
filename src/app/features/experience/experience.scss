@@ -56,6 +56,11 @@
 ::ng-deep .experience-timeline {
   .p-timeline-event {
     min-height: auto;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .p-timeline-event:last-child {
+    margin-bottom: 0;
   }
 
   .p-timeline-event-opposite {
@@ -65,7 +70,7 @@
   }
 
   .p-timeline-event-content {
-    padding: 0 0 var(--spacing-md) var(--spacing-sm);
+    padding: 0 0 0 var(--spacing-sm);
   }
 
   .p-timeline-event:nth-child(even) {
@@ -75,7 +80,7 @@
     }
 
     .p-timeline-event-content {
-      padding: 0 var(--spacing-sm) var(--spacing-md) 0;
+      padding: 0 var(--spacing-sm) 0 0;
     }
   }
 
@@ -174,6 +179,7 @@
       display: grid;
       grid-template-columns: 34px minmax(0, 1fr);
       column-gap: var(--spacing-xs);
+      margin-bottom: var(--spacing-lg);
     }
 
     .p-timeline-event-opposite {
@@ -194,7 +200,7 @@
     .p-timeline-event:nth-child(even) .p-timeline-event-content {
       grid-column: 2;
       grid-row: 2;
-      padding: 0 0 var(--spacing-md);
+      padding: 0;
     }
   }
 
