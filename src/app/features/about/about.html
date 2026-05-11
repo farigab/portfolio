@@ -4,22 +4,28 @@
     <p class="about-subtitle">{{ i18n.copy().about.subtitle }}</p>
   </header>
 
-  <p-card class="about-card">
-    <div class="card-content">
-      @for (paragraph of i18n.copy().about.paragraphs; track paragraph; let first = $first) {
-      <p [class.about-lead]="first">{{ paragraph }}</p>
-      }
+  <section class="about-panel" aria-labelledby="about-summary-title">
+    <div class="about-copy">
+      <span class="about-kicker">{{ i18n.copy().about.kicker }}</span>
+      <h2 id="about-summary-title" class="about-heading">{{ i18n.copy().about.summaryTitle }}</h2>
+
+      <div class="card-content">
+        @for (paragraph of i18n.copy().about.paragraphs; track paragraph; let first = $first) {
+        <p [class.about-lead]="first">{{ paragraph }}</p>
+        }
+      </div>
     </div>
 
-    <ng-template pTemplate="footer">
-      <div class="about-actions" role="group" aria-label="Social links">
-        <a [href]="githubUrl()" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-          <p-button label="GitHub" icon="pi pi-github"></p-button>
-        </a>
-        <a [href]="linkedinUrl()" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-          <p-button label="LinkedIn" icon="pi pi-linkedin"></p-button>
-        </a>
+    <aside class="about-focus" aria-label="Main strengths">
+      @for (item of i18n.copy().about.focus; track item.title) {
+      <div class="focus-item">
+        <span class="focus-icon {{ item.icon }}" aria-hidden="true"></span>
+        <div>
+          <strong>{{ item.title }}</strong>
+          <span>{{ item.description }}</span>
+        </div>
       </div>
-    </ng-template>
-  </p-card>
+      }
+    </aside>
+  </section>
 </div>

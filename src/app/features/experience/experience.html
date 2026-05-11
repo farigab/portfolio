@@ -6,28 +6,37 @@
 
   <div class="timeline">
     @for (item of experiences(); track item.id) {
-    <p-card class="experience-card">
-      <div class="experience-card-header">
-        <div>
-          <h2 class="experience-role">{{ item.role }}</h2>
-          <p class="experience-company">{{ item.company }}</p>
-        </div>
-        <div class="experience-meta">
-          <span>{{ item.period }}</span>
-          <span>{{ item.location }}</span>
-        </div>
+    <article class="timeline-item">
+      <div class="timeline-rail" aria-hidden="true">
+        <span class="timeline-dot"></span>
       </div>
 
-      @if (item.project) {
-      <p class="experience-project">{{ item.project }}</p>
-      }
+      <div class="timeline-period">
+        <span>{{ item.period }}</span>
+      </div>
 
-      <ul class="experience-list">
-        @for (bullet of item.bullets; track bullet) {
-        <li>{{ bullet }}</li>
+      <p-card class="experience-card">
+        <div class="experience-card-header">
+          <div>
+            <h2 class="experience-role">{{ item.role }}</h2>
+            <p class="experience-company">{{ item.company }}</p>
+          </div>
+          <div class="experience-meta">
+            <span>{{ item.location }}</span>
+          </div>
+        </div>
+
+        @if (item.project) {
+        <p class="experience-project">{{ item.project }}</p>
         }
-      </ul>
-    </p-card>
+
+        <ul class="experience-list">
+          @for (bullet of item.bullets; track bullet) {
+          <li>{{ bullet }}</li>
+          }
+        </ul>
+      </p-card>
+    </article>
     }
   </div>
 </div>

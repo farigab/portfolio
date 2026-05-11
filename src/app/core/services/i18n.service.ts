@@ -47,7 +47,14 @@ interface PortfolioCopy {
     highlights: Array<{ title: string; description: string }>;
     technologies: Array<{ name: string; category: string; img: string; color: string }>;
   };
-  about: { title: string; subtitle: string; paragraphs: string[] };
+  about: {
+    title: string;
+    subtitle: string;
+    kicker: string;
+    summaryTitle: string;
+    paragraphs: string[];
+    focus: Array<{ icon: string; title: string; description: string }>;
+  };
   projects: { title: string; subtitle: string; emptyTitle: string; emptyDescription: string; items: PortfolioProject[] };
   experience: { title: string; subtitle: string; items: ExperienceItem[] };
   footer: { rights: string };
@@ -93,10 +100,21 @@ const copy: Record<LanguageCode, PortfolioCopy> = {
     about: {
       title: 'About',
       subtitle: 'Software Developer - Full Stack (Java & Angular)',
+      kicker: 'Full Stack Developer',
+      summaryTitle: 'Java, Angular and product work with a strong technical foundation.',
       paragraphs: [
         'Software Developer with strong experience in backend and full-stack enterprise systems, specialized in Java, Spring and Angular.',
         'I work on critical systems, architectural refactoring, legacy modernization and continuous product evolution, with a focus on scalability, maintainability and reliability.',
         'My background includes Java 8/21, Spring MVC/Boot, Angular 18+, SQL, JPA, AWS services, Jenkins, GitHub Actions, automated testing and agile delivery.'
+      ],
+      focus: [
+        { icon: 'pi pi-server', title: 'Enterprise backend', description: 'Java, Spring, SQL and critical systems.' },
+        { icon: 'pi pi-desktop', title: 'Productive frontend', description: 'Modern Angular, clean interfaces and complete flows.' },
+        {
+          icon: 'pi pi-sitemap',
+          title: 'Architecture & delivery',
+          description: 'Refactoring, tests, CI/CD and continuous evolution.'
+        }
       ]
     },
     projects: {
@@ -260,10 +278,21 @@ const copy: Record<LanguageCode, PortfolioCopy> = {
     about: {
       title: 'Sobre',
       subtitle: 'Software Developer - Full Stack (Java & Angular)',
+      kicker: 'Full Stack Developer',
+      summaryTitle: 'Java, Angular e produto com base técnica sólida.',
       paragraphs: [
         'Software Developer com forte experiência em sistemas enterprise backend e full-stack, especializado em Java, Spring e Angular.',
         'Atuo em sistemas críticos, refatoração arquitetural, modernização de legado e evolução contínua de produtos, com foco em escalabilidade, manutenibilidade e confiabilidade.',
         'Minha experiência inclui Java 8/21, Spring MVC/Boot, Angular 18+, SQL, JPA, serviços AWS, Jenkins, GitHub Actions, testes automatizados e entrega ágil.'
+      ],
+      focus: [
+        { icon: 'pi pi-server', title: 'Backend enterprise', description: 'Java, Spring, SQL e sistemas críticos.' },
+        { icon: 'pi pi-desktop', title: 'Frontend produtivo', description: 'Angular moderno, interfaces limpas e fluxos completos.' },
+        {
+          icon: 'pi pi-sitemap',
+          title: 'Arquitetura & entrega',
+          description: 'Refatoração, testes, CI/CD e evolução contínua.'
+        }
       ]
     },
     projects: {
