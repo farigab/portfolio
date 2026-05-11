@@ -4,17 +4,20 @@
     <p class="experience-subtitle">{{ i18n.copy().experience.subtitle }}</p>
   </header>
 
-  <div class="timeline">
-    @for (item of experiences(); track item.id) {
-    <article class="timeline-item">
-      <div class="timeline-rail" aria-hidden="true">
-        <span class="timeline-dot"></span>
-      </div>
+  <p-timeline [value]="experiences()" align="alternate" styleClass="experience-timeline">
+    <ng-template #marker let-item>
+      <span class="timeline-marker" [style.background-color]="item.color">
+        <i [class]="item.icon"></i>
+      </span>
+    </ng-template>
 
+    <ng-template #opposite let-item>
       <div class="timeline-period">
         <span>{{ item.period }}</span>
       </div>
+    </ng-template>
 
+    <ng-template #content let-item>
       <p-card class="experience-card">
         <div class="experience-card-header">
           <div>
@@ -31,12 +34,22 @@
         }
 
         <ul class="experience-list">
-          @for (bullet of item.bullets; track bullet) {
+          @for (bullet of visibleBullets(item); track bullet) {
           <li>{{ bullet }}</li>
           }
         </ul>
+
+        @if (item.bullets.length > 2) {
+        <p-button
+          class="experience-toggle"
+          [label]="isExpanded(item.id) ? i18n.copy().experience.collapseLabel : i18n.copy().experience.expandLabel"
+          [icon]="isExpanded(item.id) ? 'pi pi-chevron-up' : 'pi pi-chevron-down'"
+          [text]="true"
+          size="small"
+          (onClick)="toggleItem(item.id)"
+        />
+        }
       </p-card>
-    </article>
-    }
-  </div>
+    </ng-template>
+  </p-timeline>
 </div>

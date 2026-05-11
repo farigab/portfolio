@@ -56,7 +56,7 @@ interface PortfolioCopy {
     focus: Array<{ icon: string; title: string; description: string }>;
   };
   projects: { title: string; subtitle: string; emptyTitle: string; emptyDescription: string; items: PortfolioProject[] };
-  experience: { title: string; subtitle: string; items: ExperienceItem[] };
+  experience: { title: string; subtitle: string; expandLabel: string; collapseLabel: string; items: ExperienceItem[] };
   footer: { rights: string };
 }
 
@@ -186,6 +186,8 @@ const copy: Record<LanguageCode, PortfolioCopy> = {
     experience: {
       title: 'Experience',
       subtitle: 'Enterprise software delivery across Java, Angular, architecture and cloud integration',
+      expandLabel: 'View details',
+      collapseLabel: 'Show less',
       items: [
         {
           id: 'radix-mid',
@@ -363,6 +365,8 @@ const copy: Record<LanguageCode, PortfolioCopy> = {
     experience: {
       title: 'Experiência',
       subtitle: 'Entrega de software enterprise com Java, Angular, arquitetura e integração cloud',
+      expandLabel: 'Ver detalhes',
+      collapseLabel: 'Mostrar menos',
       items: [
         {
           id: 'radix-mid',
