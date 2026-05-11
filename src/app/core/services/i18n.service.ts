@@ -158,7 +158,8 @@ const copy: Record<LanguageCode, PortfolioCopy> = {
             'A full-stack personal finance app with Google OAuth, income and expense tracking, monthly reports, notifications, internationalization and AI-generated financial analysis.',
           tags: ['React', 'TypeScript', 'Go', 'SQLite', 'AI'],
           links: [
-            { label: 'Frontend', url: 'https://github.com/farigab/fintrack-web', icon: 'pi pi-github', primary: true },
+            { label: 'Live', url: 'https://fintrack.farigab.com/', icon: 'pi pi-external-link', primary: true },
+            { label: 'Frontend', url: 'https://github.com/farigab/fintrack-web', icon: 'pi pi-github'},
             { label: 'API', url: 'https://github.com/farigab/fintrack-api', icon: 'pi pi-github' }
           ]
         }
@@ -322,7 +323,7 @@ const copy: Record<LanguageCode, PortfolioCopy> = {
           status: 'active',
           description:
             'Aplicação full-stack de finanças pessoais com Google OAuth, controle de receitas e despesas, relatórios mensais, notificações, internacionalização e análise financeira gerada por IA.',
-          tags: ['React', 'TypeScript', 'Go', 'SQLite', 'IA'],
+          tags: ['React', 'TypeScript', 'Go', 'Google OAuth', 'SQLite', 'IA'],
           links: [
             { label: 'Frontend', url: 'https://github.com/farigab/fintrack-web', icon: 'pi pi-github', primary: true },
             { label: 'API', url: 'https://github.com/farigab/fintrack-api', icon: 'pi pi-github' }
