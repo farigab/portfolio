@@ -160,11 +160,12 @@
   }
 
   &.active {
-    color: var(--primary);
+    color: var(--text-primary);
     font-weight: var(--font-weight-semibold);
 
     &::after {
       width: 100%;
+      background: var(--primary-hover);
     }
   }
 
